@@ -19,16 +19,17 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Post Count</th>
                     </tr>
-                    <tr>
-                    <th></th>
-                    </tr>
+                    
                 </thead>
                 {{--this categories here below is from create method--}}
             <tbody>
                 @foreach($categories as $category)
                 <tr>
                     <td>{{$category->name}}</td>
+                    {{--posts below is the name of method or relationship in category model--}}
+                    <td>{{$category->posts->count()}}</td>
                     <td class="btn-group">
                             <a href="{{route('categories.edit', $category->id)}}" class="btn btn-primary btn-md">edit</a>
                             
